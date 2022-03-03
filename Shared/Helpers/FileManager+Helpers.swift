@@ -37,6 +37,14 @@ extension FileManager {
     var leafConfNeTemplateFile: URL? {
         return Bundle.main.url(forResource: "template-ne", withExtension: "conf")
     }
+    
+    var siteDatFile: URL? {
+        return Bundle.main.url(forResource: "site", withExtension: "dat")
+    }
+    
+    var siteDatFileDest: URL? {
+        return groupFolder?.appendingPathComponent("site.dat")
+    }
 
 	var vpnLog: String? {
 		if let logfile = vpnLogFile {
@@ -83,6 +91,26 @@ extension FileManager {
             return try? String(contentsOf: confFile)
         }
 
+        return nil
+    }
+    
+    var inAppLog: URL? {
+        //save the log file in the user directory to make it easily readable on Mac
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0].appendingPathComponent("leaf.log")
+    }
+    
+    var siteDatFileData: Data? {
+        if let siteDatFile = siteDatFile {
+            return try? Data(contentsOf: siteDatFile)
+        }
+        return nil
+    }
+    
+    var siteDatFileDestData: Data? {
+        if let siteDatFileDest = siteDatFileDest {
+            return try? Data(contentsOf: siteDatFileDest)
+        }
         return nil
     }
 }

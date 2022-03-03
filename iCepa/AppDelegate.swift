@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NotificationCenter.default.addObserver(
                 self, selector: #selector(handleTor), name: .vpnStatusChanged, object: nil)
         }
+        
+        setenv("ASSET_LOCATION", "\(FileManager.default.siteDatFile!.path)", 1)
 
         return true
     }

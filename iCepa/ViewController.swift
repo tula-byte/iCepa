@@ -196,6 +196,7 @@ class ViewController: UIViewController {
                 }
                 else if idx == Info.leafLog.rawValue {
                     text = FileManager.default.leafLog
+                    try! text!.write(to: FileManager.default.inAppLog!, atomically: true, encoding: .utf8)
                 }
                 else {
                     text = FileManager.default.leafConf

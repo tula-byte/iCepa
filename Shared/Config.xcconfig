@@ -13,9 +13,9 @@
 // git update-index --skip-worktree Shared/Config.xcconfig
 // git update-index --no-skip-worktree Shared/Config.xcconfig
 
-APP_BUNDLE_ID[config=Debug] =
-EXT_BUNDLE_ID[config=Debug] =
-APP_GROUP[config=Debug] =
+APP_BUNDLE_ID[config=Debug] = com.tulabyte.iCepa
+EXT_BUNDLE_ID[config=Debug] = com.tulabyte.iCepa.tunnelProvider
+APP_GROUP[config=Debug] = group.com.tulabyte.iCepa
 DEVELOPMENT_TEAM[config=Debug] =
 APP_PROVISIONING_PROFILE_SPECIFIER[config=Debug] =
 EXT_PROVISIONING_PROFILE_SPECIFIER[config=Debug] =

@@ -101,6 +101,8 @@
 		A0FD91A926F368BB002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
 		A0FD91AF26F36A61002C317C /* template-app.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0FD91A226F35FB2002C317C /* template-app.conf */; };
 		A5445C28740CC946E8C5C0FA /* Pods_iCepa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C078DF9171B7034766397E7 /* Pods_iCepa.framework */; };
+		DC15542A27B890D7003C986C /* site.dat in Resources */ = {isa = PBXBuildFile; fileRef = DC15542927B890D7003C986C /* site.dat */; };
+		DC15542B27B890D7003C986C /* site.dat in Resources */ = {isa = PBXBuildFile; fileRef = DC15542927B890D7003C986C /* site.dat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -669,6 +671,7 @@
 		B97A8F56E0F8DD7206C1FA14 /* Pods-iCepa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCepa.debug.xcconfig"; path = "Target Support Files/Pods-iCepa/Pods-iCepa.debug.xcconfig"; sourceTree = "<group>"; };
 		BA3E6397C157544CEA3CA28D /* Pods-TorVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.release.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.release.xcconfig"; sourceTree = "<group>"; };
 		CB2AC54866A669B1EF53DA4E /* Pods-iCepa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCepa.release.xcconfig"; path = "Target Support Files/Pods-iCepa/Pods-iCepa.release.xcconfig"; sourceTree = "<group>"; };
+		DC15542927B890D7003C986C /* site.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = site.dat; sourceTree = "<group>"; };
 		FC6B77D8E3D9B67DE283B98C /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1924,6 +1927,7 @@
 				A0A735DE247566CC00073C81 /* TorVPN-Bridging-Header.h */,
 				A0FD91A226F35FB2002C317C /* template-app.conf */,
 				A023D82A271983C000A634B7 /* template-ne.conf */,
+				DC15542927B890D7003C986C /* site.dat */,
 				A05B73BC24755CE700930C40 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -2146,6 +2150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC15542A27B890D7003C986C /* site.dat in Resources */,
 				A05B73C024755CE700930C40 /* LaunchScreen.storyboard in Resources */,
 				A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */,
 				A05B73BB24755CE600930C40 /* Main.storyboard in Resources */,
@@ -2156,6 +2161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC15542B27B890D7003C986C /* site.dat in Resources */,
 				A023D82B271986FB00A634B7 /* template-ne.conf in Resources */,
 				A04F2A4826F8E3AA00C660B0 /* template-app.conf in Resources */,
 			);
@@ -2579,7 +2585,9 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iCepa/iCepa.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P3R5Z8H2F2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2595,7 +2603,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "iCepa/iCepa-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -2641,8 +2649,9 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TorVPN/TorVPN.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P3R5Z8H2F2;
 				INFOPLIST_FILE = TorVPN/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2656,7 +2665,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "$(EXT_PROVISIONING_PROFILE_SPECIFIER)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Shared/TorVPN-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
