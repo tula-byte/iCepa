@@ -17,4 +17,6 @@ extension URL {
     static var fbOnion = URL(string: "http://fpfjxcrmw437h6z2xl3w4czl55kvkmxpapg37bbopsafdu7q454byxid.onion/")!
 
     static var neverSsl = URL(string: "http://neverssl.com")!
+    
+    static var example = URL(string: "https://example.com")!
 }

@@ -24,8 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self, selector: #selector(handleTor), name: .vpnStatusChanged, object: nil)
         }
         
-        setenv("ASSET_LOCATION", "\(FileManager.default.siteDatFile!.path)", 1)
-
         return true
     }
 

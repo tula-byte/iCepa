@@ -45,7 +45,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     }
 
     @IBAction func neverSsl() {
-        load(URL.neverSsl) // unencrypted site should also be allowed.
+        load(URL.example) // test blocking of example.com
     }
 
 
