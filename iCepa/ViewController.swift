@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         nc.addObserver(self, selector: #selector(updateUi), name: .vpnStatusChanged, object: nil)
         nc.addObserver(self, selector: #selector(updateUi), name: .vpnProgress, object: nil)
 
-        clear()
+        //clear()
         updateLog(continuous: true)
     }
 
@@ -125,6 +125,7 @@ class ViewController: UIViewController {
         }
     }
 
+    
 
     // MARK: Observers
 

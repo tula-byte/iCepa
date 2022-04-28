@@ -103,6 +103,11 @@
 		A5445C28740CC946E8C5C0FA /* Pods_iCepa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C078DF9171B7034766397E7 /* Pods_iCepa.framework */; };
 		DC15542A27B890D7003C986C /* site.dat in Resources */ = {isa = PBXBuildFile; fileRef = DC15542927B890D7003C986C /* site.dat */; };
 		DC15542B27B890D7003C986C /* site.dat in Resources */ = {isa = PBXBuildFile; fileRef = DC15542927B890D7003C986C /* site.dat */; };
+		DC4F856F281909070006336F /* LogViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F856E281909070006336F /* LogViewHostingController.swift */; };
+		DCE6F49D28154B0400A850C0 /* LogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6F49C28154B0400A850C0 /* LogParser.swift */; };
+		DCE6F49E28154B0400A850C0 /* LogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6F49C28154B0400A850C0 /* LogParser.swift */; };
+		DCE6F4A128154F7700A850C0 /* LogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6F4A028154F7700A850C0 /* LogItem.swift */; };
+		DCE6F4A228154F7700A850C0 /* LogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6F4A028154F7700A850C0 /* LogItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -672,6 +677,9 @@
 		BA3E6397C157544CEA3CA28D /* Pods-TorVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.release.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.release.xcconfig"; sourceTree = "<group>"; };
 		CB2AC54866A669B1EF53DA4E /* Pods-iCepa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCepa.release.xcconfig"; path = "Target Support Files/Pods-iCepa/Pods-iCepa.release.xcconfig"; sourceTree = "<group>"; };
 		DC15542927B890D7003C986C /* site.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = site.dat; sourceTree = "<group>"; };
+		DC4F856E281909070006336F /* LogViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewHostingController.swift; sourceTree = "<group>"; };
+		DCE6F49C28154B0400A850C0 /* LogParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogParser.swift; sourceTree = "<group>"; };
+		DCE6F4A028154F7700A850C0 /* LogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItem.swift; sourceTree = "<group>"; };
 		FC6B77D8E3D9B67DE283B98C /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1879,6 +1887,7 @@
 				A0A735DD247566CC00073C81 /* iCepa-Bridging-Header.h */,
 				A05B73C124755CE700930C40 /* Info.plist */,
 				A0A735C024755DCB00073C81 /* iCepa.entitlements */,
+				DC4F856E281909070006336F /* LogViewHostingController.swift */,
 			);
 			path = iCepa;
 			sourceTree = "<group>";
@@ -1914,6 +1923,8 @@
 		A0A735DA2475621400073C81 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				DCE6F49F28154F4200A850C0 /* Models */,
+				DCE6F49B28154AE800A850C0 /* Managers */,
 				A0E1F1BC26834D7300111461 /* Tunnel */,
 				A0A735E624756C8E00073C81 /* Messages */,
 				A0A735F024756D5600073C81 /* Helpers */,
@@ -2004,6 +2015,22 @@
 				8C078DF9171B7034766397E7 /* Pods_iCepa.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCE6F49B28154AE800A850C0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DCE6F49C28154B0400A850C0 /* LogParser.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		DCE6F49F28154F4200A850C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DCE6F4A028154F7700A850C0 /* LogItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2290,6 +2317,8 @@
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
 				A0507D0926FA303800F91105 /* WebViewController.swift in Sources */,
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
+				DCE6F4A128154F7700A850C0 /* LogItem.swift in Sources */,
+				DCE6F49D28154B0400A850C0 /* LogParser.swift in Sources */,
 				A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */,
 				A05B73B824755CE600930C40 /* ViewController.swift in Sources */,
 				A0A73603247584EE00073C81 /* VpnManager.swift in Sources */,
@@ -2302,6 +2331,7 @@
 				A0A735E42475679800073C81 /* Config.swift in Sources */,
 				A0A735F524757FA400073C81 /* ProgressMessage.swift in Sources */,
 				A05B73B424755CE600930C40 /* AppDelegate.swift in Sources */,
+				DC4F856F281909070006336F /* LogViewHostingController.swift in Sources */,
 				A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A01F34DC2652C7D6008F9912 /* TorManager.swift in Sources */,
 				A0B77FFB271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */,
@@ -2319,8 +2349,10 @@
 				A06470192477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
 				A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */,
 				A01F34DD2652C7D6008F9912 /* TorManager.swift in Sources */,
+				DCE6F4A228154F7700A850C0 /* LogItem.swift in Sources */,
 				A0A735E2247566CD00073C81 /* Config.m in Sources */,
 				A053995026822C4F00A19969 /* URL+Helpers.swift in Sources */,
+				DCE6F49E28154B0400A850C0 /* LogParser.swift in Sources */,
 				A0A735F624757FA400073C81 /* ProgressMessage.swift in Sources */,
 				A0A735EF24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
 				A0A735F324756D6B00073C81 /* FileManager+Helpers.swift in Sources */,

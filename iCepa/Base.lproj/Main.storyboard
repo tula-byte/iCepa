@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zOy-O2-NNl">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,48 +8,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Log View Hosting Controller-->
+        <scene sceneID="Dkj-wN-OVG">
+            <objects>
+                <hostingController id="Rxf-gT-PcN" customClass="LogViewHostingController" customModule="iCepa" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gQw-C7-egJ"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B4s-SD-2Lj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="-585"/>
+        </scene>
         <!--iCepa-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iCepa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="VPN Configuration: %@" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1VZ-5A-rvF">
-                                <rect key="frame" x="16" y="58" width="239" height="18"/>
+                                <rect key="frame" x="16" y="102" width="333" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfP-eZ-eNK">
-                                <rect key="frame" x="263" y="52" width="41" height="30"/>
+                                <rect key="frame" x="357" y="96" width="41" height="30"/>
                                 <state key="normal" title="Install"/>
                                 <connections>
                                     <action selector="changeConf" destination="BYZ-38-t0r" eventType="touchUpInside" id="699-Bm-u0G"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Session: %@" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dJ-VF-05V">
-                                <rect key="frame" x="16" y="129" width="221" height="18"/>
+                                <rect key="frame" x="16" y="173" width="315" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoX-1r-5fw">
-                                <rect key="frame" x="245" y="123" width="59" height="30"/>
+                                <rect key="frame" x="339" y="167" width="59" height="30"/>
                                 <state key="normal" title="Connect"/>
                                 <connections>
                                     <action selector="changeSession" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Xd-gH-LdY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: %@" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfg-d4-gTq">
-                                <rect key="frame" x="16" y="155" width="288" height="18"/>
+                                <rect key="frame" x="16" y="199" width="382" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NMi-zG-000">
-                                <rect key="frame" x="16" y="181" width="288" height="32"/>
+                                <rect key="frame" x="16" y="225" width="382" height="32"/>
                                 <segments>
                                     <segment title="VPN Log"/>
                                     <segment title="Tor Log"/>
@@ -62,14 +72,14 @@
                                 </connections>
                             </segmentedControl>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PlS-Eg-V1S">
-                                <rect key="frame" x="16" y="220" width="288" height="348"/>
+                                <rect key="frame" x="16" y="264" width="382" height="632"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k8y-m8-Rta">
-                                <rect key="frame" x="16" y="90" width="288" height="32"/>
+                                <rect key="frame" x="16" y="134" width="382" height="32"/>
                                 <segments>
                                     <segment title="Direct"/>
                                     <segment title="Obfs4"/>
@@ -114,11 +124,18 @@
                                 <action selector="clear" destination="BYZ-38-t0r" id="WAN-Wt-zAP"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="globe" catalog="system" id="fDO-vW-QMh">
-                            <connections>
-                                <segue destination="jYA-dm-nIX" kind="show" id="mmD-sA-ga4"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="globe" catalog="system" id="fDO-vW-QMh">
+                                <connections>
+                                    <segue destination="jYA-dm-nIX" kind="show" id="mmD-sA-ga4"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="doc.text.magnifyingglass" catalog="system" id="PLv-JZ-Eej">
+                                <connections>
+                                    <segue destination="Rxf-gT-PcN" kind="show" id="7Ld-Kn-r5k"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="confBt" destination="EfP-eZ-eNK" id="LDK-9D-yOU"/>
@@ -140,11 +157,11 @@
             <objects>
                 <viewController id="jYA-dm-nIX" customClass="WebViewController" customModule="iCepa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="otY-Yz-heB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIm-NQ-9Rx">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -198,7 +215,7 @@
             <objects>
                 <navigationController id="zOy-O2-NNl" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sy3-W1-eYI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -211,6 +228,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="doc.text.magnifyingglass" catalog="system" width="107" height="128"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
