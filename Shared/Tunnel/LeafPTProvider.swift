@@ -19,11 +19,11 @@ class LeafPTProvider: BasePTProvider {
         var conf: String?
 
         if Config.torInApp {
-            conf = FileManager.default.leafConfAppTemplate?
+            conf = FileManager.default.leafConfDirectTemplate?
                 .replacingOccurrences(of: "{{leafProxyPort}}", with: String(TorManager.leafProxyPort))
         }
         else {
-            conf = FileManager.default.leafConfNeTemplate
+            conf = FileManager.default.leafConfTorTemplate
         }
         
         /*

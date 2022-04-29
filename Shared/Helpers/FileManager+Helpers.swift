@@ -30,12 +30,12 @@ extension FileManager {
         return groupFolder?.appendingPathComponent("leaf.conf")
     }
 
-    var leafConfAppTemplateFile: URL? {
-        return Bundle.main.url(forResource: "template-app", withExtension: "conf")
+    var leafConfDirectTemplateFile: URL? {
+        return Bundle.main.url(forResource: "template-direct", withExtension: "conf")
     }
 
-    var leafConfNeTemplateFile: URL? {
-        return Bundle.main.url(forResource: "template-ne", withExtension: "conf")
+    var leafConfTorTemplateFile: URL? {
+        return Bundle.main.url(forResource: "template-tor", withExtension: "conf")
     }
     
     var siteDatFile: URL? {
@@ -70,16 +70,16 @@ extension FileManager {
         return nil
     }
 
-    var leafConfAppTemplate: String? {
-        if let templateFile = leafConfAppTemplateFile {
+    var leafConfDirectTemplate: String? {
+        if let templateFile = leafConfDirectTemplateFile {
             return try? String(contentsOf: templateFile)
         }
 
         return nil
     }
 
-    var leafConfNeTemplate: String? {
-        if let templateFile = leafConfNeTemplateFile {
+    var leafConfTorTemplate: String? {
+        if let templateFile = leafConfTorTemplateFile {
             return try? String(contentsOf: templateFile)
         }
 

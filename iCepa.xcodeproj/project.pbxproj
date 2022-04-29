@@ -12,10 +12,10 @@
 		A01F34DD2652C7D6008F9912 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
 		A01F34DF2652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A01F34E02652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
-		A023D82B271986FB00A634B7 /* template-ne.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template-ne.conf */; };
-		A023D82C271986FC00A634B7 /* template-ne.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template-ne.conf */; };
+		A023D82B271986FB00A634B7 /* template-tor.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template-tor.conf */; };
+		A023D82C271986FC00A634B7 /* template-tor.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template-tor.conf */; };
 		A04F2A4726F8DA5C00C660B0 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
-		A04F2A4826F8E3AA00C660B0 /* template-app.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0FD91A226F35FB2002C317C /* template-app.conf */; };
+		A04F2A4826F8E3AA00C660B0 /* template-direct.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0FD91A226F35FB2002C317C /* template-direct.conf */; };
 		A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A0507CF626F9FB9400F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF526F9FB9400F91105 /* NetworkExtension.framework */; };
@@ -99,11 +99,15 @@
 		A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
 		A0FD91A626F36199002C317C /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
 		A0FD91A926F368BB002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
-		A0FD91AF26F36A61002C317C /* template-app.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0FD91A226F35FB2002C317C /* template-app.conf */; };
+		A0FD91AF26F36A61002C317C /* template-direct.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0FD91A226F35FB2002C317C /* template-direct.conf */; };
 		A5445C28740CC946E8C5C0FA /* Pods_iCepa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C078DF9171B7034766397E7 /* Pods_iCepa.framework */; };
 		DC15542A27B890D7003C986C /* site.dat in Resources */ = {isa = PBXBuildFile; fileRef = DC15542927B890D7003C986C /* site.dat */; };
 		DC15542B27B890D7003C986C /* site.dat in Resources */ = {isa = PBXBuildFile; fileRef = DC15542927B890D7003C986C /* site.dat */; };
 		DC4F856F281909070006336F /* LogViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F856E281909070006336F /* LogViewHostingController.swift */; };
+		DC5279F0281B6C6B005599EF /* SubscriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5279EF281B6C6B005599EF /* SubscriptionController.swift */; };
+		DC5279F2281BA45B005599EF /* UserDefaults+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5279F1281BA45B005599EF /* UserDefaults+Helpers.swift */; };
+		DC5279F3281BA45B005599EF /* UserDefaults+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5279F1281BA45B005599EF /* UserDefaults+Helpers.swift */; };
+		DC5279F5281BA54E005599EF /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5279F4281BA54E005599EF /* NetworkMonitor.swift */; };
 		DCE6F49D28154B0400A850C0 /* LogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6F49C28154B0400A850C0 /* LogParser.swift */; };
 		DCE6F49E28154B0400A850C0 /* LogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6F49C28154B0400A850C0 /* LogParser.swift */; };
 		DCE6F4A128154F7700A850C0 /* LogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6F4A028154F7700A850C0 /* LogItem.swift */; };
@@ -201,7 +205,7 @@
 		8C078DF9171B7034766397E7 /* Pods_iCepa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCepa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01F34DB2652C7D6008F9912 /* TorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorManager.swift; sourceTree = "<group>"; };
 		A01F34DE2652D082008F9912 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		A023D82A271983C000A634B7 /* template-ne.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "template-ne.conf"; sourceTree = "<group>"; };
+		A023D82A271983C000A634B7 /* template-tor.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "template-tor.conf"; sourceTree = "<group>"; };
 		A04F285926F8D46400C660B0 /* Cross.toml */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cross.toml; sourceTree = "<group>"; };
 		A04F285B26F8D46500C660B0 /* build_cross.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_cross.sh; sourceTree = "<group>"; };
 		A04F285D26F8D46500C660B0 /* Cargo.toml */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cargo.toml; sourceTree = "<group>"; };
@@ -670,7 +674,7 @@
 		A0E1F1AB26834C0400111461 /* TorVPN_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TorVPN_Mac.entitlements; sourceTree = "<group>"; };
 		A0E9915525375EFA0051AB88 /* OGoT2SPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGoT2SPTProvider.swift; sourceTree = "<group>"; };
 		A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafPTProvider.swift; sourceTree = "<group>"; };
-		A0FD91A226F35FB2002C317C /* template-app.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "template-app.conf"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.yaml; };
+		A0FD91A226F35FB2002C317C /* template-direct.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "template-direct.conf"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.yaml; };
 		A0FD91A426F36199002C317C /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "$(BUILT_PRODUCTS_DIR)/libleaf.a"; sourceTree = "<group>"; };
 		A0FD91A526F36199002C317C /* leaf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leaf.h; sourceTree = "<group>"; };
 		B97A8F56E0F8DD7206C1FA14 /* Pods-iCepa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCepa.debug.xcconfig"; path = "Target Support Files/Pods-iCepa/Pods-iCepa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -678,6 +682,9 @@
 		CB2AC54866A669B1EF53DA4E /* Pods-iCepa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCepa.release.xcconfig"; path = "Target Support Files/Pods-iCepa/Pods-iCepa.release.xcconfig"; sourceTree = "<group>"; };
 		DC15542927B890D7003C986C /* site.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = site.dat; sourceTree = "<group>"; };
 		DC4F856E281909070006336F /* LogViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewHostingController.swift; sourceTree = "<group>"; };
+		DC5279EF281B6C6B005599EF /* SubscriptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionController.swift; sourceTree = "<group>"; };
+		DC5279F1281BA45B005599EF /* UserDefaults+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Helpers.swift"; sourceTree = "<group>"; };
+		DC5279F4281BA54E005599EF /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		DCE6F49C28154B0400A850C0 /* LogParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogParser.swift; sourceTree = "<group>"; };
 		DCE6F4A028154F7700A850C0 /* LogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItem.swift; sourceTree = "<group>"; };
 		FC6B77D8E3D9B67DE283B98C /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1936,8 +1943,8 @@
 				A01F34DB2652C7D6008F9912 /* TorManager.swift */,
 				A0A73602247584EE00073C81 /* VpnManager.swift */,
 				A0A735DE247566CC00073C81 /* TorVPN-Bridging-Header.h */,
-				A0FD91A226F35FB2002C317C /* template-app.conf */,
-				A023D82A271983C000A634B7 /* template-ne.conf */,
+				A0FD91A226F35FB2002C317C /* template-direct.conf */,
+				A023D82A271983C000A634B7 /* template-tor.conf */,
 				DC15542927B890D7003C986C /* site.dat */,
 				A05B73BC24755CE700930C40 /* Assets.xcassets */,
 			);
@@ -1966,6 +1973,7 @@
 				A0A73607247587D300073C81 /* UIButton+Helpers.swift */,
 				A06470172477F7E900311CBE /* UITextView+Helpers.swift */,
 				A053994E26822C4F00A19969 /* URL+Helpers.swift */,
+				DC5279F1281BA45B005599EF /* UserDefaults+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2021,6 +2029,8 @@
 			isa = PBXGroup;
 			children = (
 				DCE6F49C28154B0400A850C0 /* LogParser.swift */,
+				DC5279EF281B6C6B005599EF /* SubscriptionController.swift */,
+				DC5279F4281BA54E005599EF /* NetworkMonitor.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -2189,8 +2199,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC15542B27B890D7003C986C /* site.dat in Resources */,
-				A023D82B271986FB00A634B7 /* template-ne.conf in Resources */,
-				A04F2A4826F8E3AA00C660B0 /* template-app.conf in Resources */,
+				A023D82B271986FB00A634B7 /* template-tor.conf in Resources */,
+				A04F2A4826F8E3AA00C660B0 /* template-direct.conf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2198,8 +2208,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A023D82C271986FC00A634B7 /* template-ne.conf in Resources */,
-				A0FD91AF26F36A61002C317C /* template-app.conf in Resources */,
+				A023D82C271986FC00A634B7 /* template-tor.conf in Resources */,
+				A0FD91AF26F36A61002C317C /* template-direct.conf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2314,6 +2324,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC5279F0281B6C6B005599EF /* SubscriptionController.swift in Sources */,
+				DC5279F2281BA45B005599EF /* UserDefaults+Helpers.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
 				A0507D0926FA303800F91105 /* WebViewController.swift in Sources */,
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
@@ -2321,6 +2333,7 @@
 				DCE6F49D28154B0400A850C0 /* LogParser.swift in Sources */,
 				A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */,
 				A05B73B824755CE600930C40 /* ViewController.swift in Sources */,
+				DC5279F5281BA54E005599EF /* NetworkMonitor.swift in Sources */,
 				A0A73603247584EE00073C81 /* VpnManager.swift in Sources */,
 				A0A735EE24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
 				A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
@@ -2356,6 +2369,7 @@
 				A0A735F624757FA400073C81 /* ProgressMessage.swift in Sources */,
 				A0A735EF24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
 				A0A735F324756D6B00073C81 /* FileManager+Helpers.swift in Sources */,
+				DC5279F3281BA45B005599EF /* UserDefaults+Helpers.swift in Sources */,
 				A0A735ED24756CA200073C81 /* Message.swift in Sources */,
 				A0B77FFC271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */,
 				A0A735EB24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,

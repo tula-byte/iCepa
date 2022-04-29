@@ -43,7 +43,7 @@ class LogParser {
     }
     
     /// Parse a single log item
-    public func parseItem(item: String) -> LogItem {
+    public func parseItem(item: String) async -> LogItem {
         /*
          Example request
          [2022-04-24 19:30:08][INFO] [tcp] [tun] [Tor] [1249ms] iphone-ld.apple.com:443
@@ -58,7 +58,7 @@ class LogParser {
         var components: [String] = item.components(separatedBy: "]")
         components = components.map{$0.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: "[", with: "")}
         
-        if components.count == 7 {
+        if (components.count == 7 && components[1] == "INFO") {
             let timestamp: Date = self.dateFormatter.date(from: components[0]) ?? Date.distantPast
             let dest: PacketDestination = parseDestination(destString: components[4])
             let handshakeTime: Int = Int(components[5].replacingOccurrences(of: "ms", with: "")) ?? 0
@@ -72,15 +72,24 @@ class LogParser {
     }
     
     /// Parse the entire log file
-    public func parseLog() -> [LogItem]{
-        var logItems: [LogItem] = [LogItem]()
-        
-        let lines = self.getLogString().components(separatedBy: "\n")
-        for line in lines {
-            if (line.trimmingCharacters(in: CharacterSet.whitespaces) != "" && !line.starts(with: "#")) && !line.starts(with: "\n") {
-                logItems.append(parseItem(item: line))
+    public func parseLog() async -> [LogItem]{
+        let logItems:[LogItem] = try! await withThrowingTaskGroup(of: LogItem.self, body: { group in
+            let lines = self.getLogString().components(separatedBy: "\n")
+            for line in lines {
+                if (line.trimmingCharacters(in: CharacterSet.whitespaces) != "" && !line.starts(with: "#")) && !line.starts(with: "\n") {
+                    group.addTask {
+                        return await self.parseItem(item: line)
+                    }
+                }
             }
-        }
+            var logItems: [LogItem] = [LogItem]()
+            
+            for try await i in group {
+                logItems.append(i)
+            }
+
+            return logItems
+        })
         
         return logItems
     }
