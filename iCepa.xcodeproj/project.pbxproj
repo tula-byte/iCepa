@@ -620,7 +620,6 @@
 		A0507D0026F9FC2600F91105 /* Tor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0507D0426F9FC2C00F91105 /* Tor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0507D0826FA303800F91105 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		A0534495264C35180077560D /* T2TPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T2TPTProvider.swift; sourceTree = "<group>"; };
 		A05399312682293500A19969 /* iCepa-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iCepa-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05399332682293500A19969 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A05399352682293500A19969 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -640,8 +639,6 @@
 		A06470172477F7E900311CBE /* UITextView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Helpers.swift"; sourceTree = "<group>"; };
 		A064701A2478170F00311CBE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A064701B24781C5400311CBE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		A08DA307252DDC26006B0DC1 /* GoT2SPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoT2SPTProvider.swift; sourceTree = "<group>"; };
-		A08DA309252DDC49006B0DC1 /* OBT2SPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBT2SPTProvider.swift; sourceTree = "<group>"; };
 		A0A735C024755DCB00073C81 /* iCepa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iCepa.entitlements; sourceTree = "<group>"; };
 		A0A735C424755E2100073C81 /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0A735C524755E2100073C81 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -672,7 +669,6 @@
 		A0E1F1A526834C0400111461 /* TorVPN-Mac.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TorVPN-Mac.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E1F1AA26834C0400111461 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0E1F1AB26834C0400111461 /* TorVPN_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TorVPN_Mac.entitlements; sourceTree = "<group>"; };
-		A0E9915525375EFA0051AB88 /* OGoT2SPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGoT2SPTProvider.swift; sourceTree = "<group>"; };
 		A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafPTProvider.swift; sourceTree = "<group>"; };
 		A0FD91A226F35FB2002C317C /* template-direct.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "template-direct.conf"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.yaml; };
 		A0FD91A426F36199002C317C /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "$(BUILT_PRODUCTS_DIR)/libleaf.a"; sourceTree = "<group>"; };
@@ -1916,9 +1912,6 @@
 		A0A735CE247561F200073C81 /* TorVPN */ = {
 			isa = PBXGroup;
 			children = (
-				A08DA309252DDC49006B0DC1 /* OBT2SPTProvider.swift */,
-				A08DA307252DDC26006B0DC1 /* GoT2SPTProvider.swift */,
-				A0E9915525375EFA0051AB88 /* OGoT2SPTProvider.swift */,
 				A0DD8CDD252CB794006750DF /* PacketFlow.swift */,
 				A057A06025377D45004B3D18 /* TunWriter.swift */,
 				A0A735D1247561F200073C81 /* Info.plist */,
@@ -1991,7 +1984,6 @@
 			isa = PBXGroup;
 			children = (
 				A0A735CF247561F200073C81 /* BasePTProvider.swift */,
-				A0534495264C35180077560D /* T2TPTProvider.swift */,
 				A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */,
 			);
 			path = Tunnel;

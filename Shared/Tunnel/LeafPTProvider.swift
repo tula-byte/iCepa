@@ -18,12 +18,13 @@ class LeafPTProvider: BasePTProvider {
     override func startTun2Socks() {
         var conf: String?
 
-        if Config.torInApp {
-            conf = FileManager.default.leafConfDirectTemplate?
-                .replacingOccurrences(of: "{{leafProxyPort}}", with: String(TorManager.leafProxyPort))
+        if UserDefaults.useTor {
+            conf = FileManager.default.leafConfTorTemplate?
+                    .replacingOccurrences(of: "{{torProxyPort}}", with: String(TorManager.torProxyPort))
+                    .replacingOccurrences(of: "{{dnsPort}}", with: String(TorManager.dnsPort))
         }
         else {
-            conf = FileManager.default.leafConfTorTemplate
+            conf = FileManager.default.leafConfDirectTemplate
         }
         
         /*
@@ -38,9 +39,6 @@ class LeafPTProvider: BasePTProvider {
         
         conf = conf?.replacingOccurrences(of: "{{leafLogFile}}", with: FileManager.default.leafLogFile!.path)
             .replacingOccurrences(of: "{{tunFd}}", with: String(tunnelFd!))
-            .replacingOccurrences(of: "{{torProxyPort}}", with: String(TorManager.torProxyPort))
-            .replacingOccurrences(of: "{{dnsPort}}", with: String(TorManager.dnsPort))
-            //.replacingOccurrences(of: "{{datFilePath}}", with: FileManager.default.siteDatFile!.path)
 
         let file = FileManager.default.leafConfFile
 
@@ -51,7 +49,6 @@ class LeafPTProvider: BasePTProvider {
         // add site.dat blocklist file path to env, so that leaf can access it
         setenv("ASSET_LOCATION", "\(FileManager.default.siteDatFile!.deletingLastPathComponent().path)", 1)
         
-        NSLog("iCFM: ASSET_LOCATION - \(FileManager.default.siteDatFile!.path)")
 
         DispatchQueue.global(qos: .userInteractive).async {
             leaf_run(LeafPTProvider.leafId, file?.path)

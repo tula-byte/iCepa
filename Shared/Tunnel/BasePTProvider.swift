@@ -132,10 +132,12 @@ class BasePTProvider: NEPacketTunnelProvider {
                 }
 #endif
 
-                TorManager.shared.start(self.transport, port, { progress in
-                    BasePTProvider.messageQueue.append(ProgressMessage(Float(progress) / 100))
-                    self.sendMessages()
-                }, completion)
+                if UserDefaults.useTor {
+                    TorManager.shared.start(self.transport, port, { progress in
+                        BasePTProvider.messageQueue.append(ProgressMessage(Float(progress) / 100))
+                        self.sendMessages()
+                    }, completion)
+                }
             }
         }
     }
@@ -143,8 +145,10 @@ class BasePTProvider: NEPacketTunnelProvider {
     override func stopTunnel(with reason: NEProviderStopReason, completionHandler: @escaping () -> Void) {
         log("#stopTunnel reason=\(reason)")
 
-        TorManager.shared.stop()
-
+        if UserDefaults.useTor {
+            TorManager.shared.stop()
+        }
+        
 #if os(iOS)
         if !Config.torInApp {
             switch transport {
