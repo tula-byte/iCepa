@@ -27,16 +27,6 @@ class LeafPTProvider: BasePTProvider {
             conf = FileManager.default.leafConfDirectTemplate
         }
         
-        /*
-        do {
-            NSLog("iCFM: site.dat contents - \(FileManager.default.siteDatFileData)")
-            try FileManager.default.siteDatFileData?.write(to: FileManager.default.siteDatFileDest!)
-            NSLog("iCFM: site.dat destination path - \(FileManager.default.siteDatFileDest?.path) contents - \(FileManager.default.siteDatFileDestData)")
-        } catch  {
-            NSLog("iCFM: File could not be copied")
-        }
-        */
-        
         conf = conf?.replacingOccurrences(of: "{{leafLogFile}}", with: FileManager.default.leafLogFile!.path)
             .replacingOccurrences(of: "{{tunFd}}", with: String(tunnelFd!))
 

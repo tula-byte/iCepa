@@ -7,17 +7,29 @@
 //
 
 import Foundation
+import RealmSwift
 
 /// Model for a logged packet
-struct LogItem : Identifiable {
-    let id = UUID()
-    var url: String
-    var dest: PacketDestination
-    var handshakeTime: Int
-    var timestamp: Date
+class LogItem : Object, ObjectKeyIdentifiable {
+    
+    init(url: String, dest: PacketDestination, handshakeTime: Int, timestamp: Date) {
+        self.url = url
+        self.dest = dest
+        self.handshakeTime = handshakeTime
+        self.timestamp = timestamp
+    }
+    
+    @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted var url: String
+    @Persisted var dest: PacketDestination
+    @Persisted var handshakeTime: Int
+    @Persisted var timestamp: Date
 }
 
 /// Valid Destinations for a logged packet
-enum PacketDestination {
-    case direct, tor, block, other
+@objc enum PacketDestination: Int, PersistableEnum {
+    case direct = 0
+    case tor = 1
+    case block = 2
+    case other = 3
 }
