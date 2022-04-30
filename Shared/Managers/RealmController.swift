@@ -44,21 +44,8 @@ class RealmController {
     ///- Parameter userAdded: Condition to see if the element is user added or by TulaByte
     ///- Parameter list: Which TulaList this element on: .block or .allow
     func addItemToList(url: String, userAdded: Bool = true, list: TulaList){
-        var listItem: ListItem?
-        
-        if list == .allow {
-            listItem = AllowListItem()
-        } else if list == .block {
-            listItem = BlockListItem()
-        }
-        
-        listItem!.url = url
-        listItem!.userAdded = userAdded
-        
-        
-        
         try! self.db.write({
-            self.db.add(listItem!, update: .modified)
+            self.db.add(ListItem(url: url, userAdded: userAdded, list: list), update: .modified)
         })
     }
 
@@ -67,47 +54,20 @@ class RealmController {
     ///- Parameter userAdded: Condition to see if the element is user added or by TulaByte
     ///- Parameter list: Which TulaList this element on: .block or .allow
     func addItemsToList(urls: [String], userAdded: Bool = true, list: TulaList) {
-        var urlList:[ListItem] = []
-        
-        if list == .allow {
-            urlList = urls.map { url in
-                var item = AllowListItem()
-                item.url = url
-                item.userAdded = userAdded
-                
-                return item
-            }
-        } else if list == .block {
-            urlList = urls.map { url in
-                var item = BlockListItem()
-                item.url = url
-                item.userAdded = userAdded
-                
-                return item
-            }
-        }
-        
         try! self.db.write({
-            for item in urlList {
+            urls.forEach({ url in
+                let item = ListItem(url: url, userAdded: userAdded, list: list)
                 self.db.add(item, update: .modified)
-            }
+            })
         })
     }
 
-    ///Deletes a URL from a gievn list
+    ///Deletes a URL from a given list
     ///- Parameter url: The URL to delete
-    ///- Parameter list: Which TulaList this URL on: .block or .allow
-    func deleteItemFromList(url: String, list: TulaList){
+    func deleteItemFromList(url: String){
         try! self.db.write({
-            if list == .allow{
-                let item = self.db.object(ofType: AllowListItem.self, forPrimaryKey: url)
-                
-                self.db.delete(item!)
-            } else if list == .block {
-                let item = self.db.object(ofType: BlockListItem.self, forPrimaryKey: url)
-                
-                self.db.delete(item!)
-            }
+            let item = self.db.object(ofType: ListItem.self, forPrimaryKey: url)
+            self.db.delete(item!)
         })
     }
 
@@ -115,13 +75,8 @@ class RealmController {
     ///- Parameter list: Which TulaList is to be cleared - .block or .allow
     func clearList(list: TulaList){
         try! self.db.write({
-            if list == .allow {
-                let selected = self.db.objects(AllowListItem.self)
-                self.db.delete(selected)
-            } else if list == .block {
-                let selected = self.db.objects(BlockListItem.self)
-                self.db.delete(selected)
-            }
+            let list = self.db.objects(ListItem.self).where {$0.list == list}
+            self.db.delete(list)
         })
     }
 
@@ -129,24 +84,17 @@ class RealmController {
     /// - Parameter list: Which TulaList to retrive: .block or .allow
     /// - Returns: An array of URL strings
     func getListArray(list: TulaList) -> [String]{
-        let startTime = CFAbsoluteTimeGetCurrent()
+        var urlList: [String] = [String]()
         
-        if list == .allow {
-            let urls = self.db.objects(AllowListItem.self)
-            NSLog("TBT DB: \(urls.count) list items retrived in \(startTime - CFAbsoluteTimeGetCurrent())s")
-            return urls.map({ i in
-                return i.url
-            })
-            
-        } else if list == .block {
-            let urls = self.db.objects(BlockListItem.self)
-            NSLog("TBT DB: \(urls.count) list items retrived in \(startTime - CFAbsoluteTimeGetCurrent())s")
-            return urls.map({ i in
-                return i.url
-            })
+        let fetchedUrls: [String] = self.db.objects(ListItem.self)
+            .where{$0.list == list}
+            .map{$0.url}
+        
+        if fetchedUrls.count > 0 {
+            urlList = fetchedUrls
         }
         
-        return []
+        return urlList
     }
 
     /// Reads URL strings from a file in the app bundle
@@ -169,8 +117,10 @@ class RealmController {
                 }
             }
         }
-        catch _ as NSError{
+        catch {
+            NSLog("TBT Lists ERROR: \(error)")
         }
+        
         return domains
     }
 
@@ -182,7 +132,7 @@ class RealmController {
         
         do {
             if fileURL.startAccessingSecurityScopedResource() == true {
-                let contents = try! String(contentsOfFile: fileURL.path)
+                let contents = try String(contentsOfFile: fileURL.path)
                 //NSLog("TBT Lists: Selected file - \(contents)")
                 let lines = contents.components(separatedBy: "\n")
                 for line in lines {
@@ -243,58 +193,41 @@ class RealmController {
     /// - Parameter list: The TulaList to check in: .block or .allow
     /// - Returns: A boolean value indicating whether it was found or not
     func isDomainInList(url: String, list: TulaList) -> Bool {
+        var returnVal: Bool = false
         let start = CFAbsoluteTimeGetCurrent()
         
-        if list == .allow {
-            let allowlist = self.db.objects(AllowListItem.self)
-            
-            let value = allowlist.where {
-                ($0.url.ends(with: ".\(url)")) || ($0.url == url)
-            }
-            
-            if value.count >= 1 {
-                return true
-            }
-            
-        } else if list == .block {
-            let blocklist = self.db.objects(BlockListItem.self)
-            
-            let value = blocklist.where {
-                ($0.url.ends(with: ".\(url)")) || ($0.url == url)
-            }
-            
-            if value.count >= 1 {
-                NSLog("TBT DB: \(url) matched to \(value.first!.url)")
-                return true
-            }
+        let bothLists = self.db.objects(ListItem.self)
+        
+        let value = bothLists.where {
+            ($0.list == list) && (($0.url.ends(with: ".\(url)")) || ($0.url == url))
         }
         
-        NSLog("TBT DB: Checked \(url) in \(start - CFAbsoluteTimeGetCurrent())s")
-        return false
+        if value.count >= 1 {
+            NSLog("TBT DB: \(url) matched to \(value.first!.url) in \(CFAbsoluteTimeGetCurrent() - start)s")
+            returnVal = true
+        }
+    
+        return returnVal
     }
 
     /// Swaps the list of a given URL
     /// - Parameter url: The url to swap
     /// - Parameter toList: The destination list for the URL
     func swapList(url: String, toList: TulaList){
+        deleteItemFromList(url: url)
         if toList == .allow {
-            deleteItemFromList(url: url, list: .block)
             addItemToList(url: url, list: .allow)
         } else if toList == .block {
-            deleteItemFromList(url: url, list: .allow)
             addItemToList(url: url, list: .block)
         }
     }
 
 
     //MARK: - Logging
-
-    func addItemToMonitorList(url: String, timestamp: Date = Date(), list: TulaList = .other) {
-
-        
+    func addItemToMonitorList(item: LogItem) {
         try! self.db.write {
-            self.db.add(newItem)
-            NSLog("TBT REALM: Added \(url) to monitor list")
+            self.db.add(item)
+            NSLog("TBT REALM: Added \(item.url) to monitor list")
         }
     }
 
