@@ -12,13 +12,15 @@ import RealmSwift
 /// Model for a logged packet
 class LogItem : Object, ObjectKeyIdentifiable {
     
-    init(url: String, dest: PacketDestination, handshakeTime: Int, timestamp: Date) {
+    /*
+    override init(url: String, dest: PacketDestination, handshakeTime: Int, timestamp: Date) {
         self.url = url
         self.dest = dest
         self.handshakeTime = handshakeTime
         self.timestamp = timestamp
     }
-    
+     */
+
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var url: String
     @Persisted var dest: PacketDestination

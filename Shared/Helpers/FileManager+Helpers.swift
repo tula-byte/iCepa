@@ -42,8 +42,12 @@ extension FileManager {
         return Bundle.main.url(forResource: "site", withExtension: "dat")
     }
     
-    var siteDatFileDest: URL? {
-        return groupFolder?.appendingPathComponent("site.dat")
+    var sqliteDBFile: URL? {
+        return groupFolder?.appendingPathComponent("tulabyte.db")
+    }
+    
+    var sqliteDBFileTemplate: URL? {
+        return Bundle.main.url(forResource: "tulabyte", withExtension: "db")
     }
 
 	var vpnLog: String? {
@@ -107,10 +111,12 @@ extension FileManager {
         return nil
     }
     
+    /*
     var siteDatFileDestData: Data? {
         if let siteDatFileDest = siteDatFileDest {
             return try? Data(contentsOf: siteDatFileDest)
         }
         return nil
     }
+     */
 }

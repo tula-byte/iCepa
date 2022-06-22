@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self, selector: #selector(handleTor), name: .vpnStatusChanged, object: nil)
         }
         
+        UserDefaults.setUseTor(useTor: true)
+        
         return true
     }
 

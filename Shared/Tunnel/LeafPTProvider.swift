@@ -39,6 +39,10 @@ class LeafPTProvider: BasePTProvider {
         // add site.dat blocklist file path to env, so that leaf can access it
         setenv("ASSET_LOCATION", "\(FileManager.default.siteDatFile!.deletingLastPathComponent().path)", 1)
         
+        //add sqlite db path to env so leaf can read it
+        try! FileManager.default.copyItem(at: FileManager.default.sqliteDBFileTemplate!, to: FileManager.default.sqliteDBFile!)
+        setenv("DATABASE_LOCATION", "\(FileManager.default.sqliteDBFile!.path)", 1)
+        
 
         DispatchQueue.global(qos: .userInteractive).async {
             leaf_run(LeafPTProvider.leafId, file?.path)

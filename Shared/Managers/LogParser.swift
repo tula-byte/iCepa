@@ -64,9 +64,9 @@ class LogParser {
             let handshakeTime: Int = Int(components[5].replacingOccurrences(of: "ms", with: "")) ?? 0
             let url: String = components[6].components(separatedBy: ":")[0]
             
-            return LogItem(url: url, dest: dest, handshakeTime: handshakeTime, timestamp: timestamp)
+            return initialiseLogItem(url: url, dest: dest, handshakeTime: handshakeTime, timestamp: timestamp)
         } else {
-            return LogItem(url: "", dest: .other, handshakeTime: 0, timestamp: Date.distantPast)
+            return initialiseLogItem(url: "", dest: .other, handshakeTime: 0, timestamp: Date.distantPast)
         }
        
     }
@@ -106,6 +106,16 @@ class LogParser {
         default:
             return PacketDestination.other
         }
+    }
+    
+    private func initialiseLogItem(url: String, dest: PacketDestination, handshakeTime: Int, timestamp: Date) -> LogItem {
+        let newItem = LogItem()
+        newItem.url = url
+        newItem.dest = dest
+        newItem.handshakeTime = handshakeTime
+        newItem.timestamp = timestamp
+        
+        return newItem
     }
     
 }

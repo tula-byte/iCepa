@@ -107,7 +107,8 @@ class ViewController: UIViewController {
                 }
             }
 
-            if Config.torInApp {
+            // the top condition 
+            if false {
                 TorManager.shared.getCircuits(showCircuits)
             }
             else {

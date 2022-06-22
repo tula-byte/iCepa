@@ -10,12 +10,19 @@ import UIKit
 import SwiftUI
 
 struct LogView: View {
-    @State var log: [LogItem] = LogParser.shared.parseLog()
+    @State var log: [LogItem] = []
+    
+    private func updateLog() async {
+        let tempLog = await LogParser.shared.parseLog()
+        log = tempLog.filter { item in
+            item.dest != .other
+        }
+    }
     
     var body: some View {
         VStack{
             Button {
-                log = LogParser.shared.parseLog()
+                SQLController.shared.getLogSize()
             } label: {
                 Text("Refresh Log")
             }
@@ -26,6 +33,9 @@ struct LogView: View {
             }
         }
         .padding()
+        .task {
+            await updateLog()
+        }
     }
 }
 

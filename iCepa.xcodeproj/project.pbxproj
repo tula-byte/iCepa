@@ -111,11 +111,17 @@
 		DC1C8355281CFC8D00F86471 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C8353281CFC8D00F86471 /* RealmController.swift */; };
 		DC1C8357281CFCCE00F86471 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C8356281CFCCE00F86471 /* ListItem.swift */; };
 		DC1C8358281CFCCE00F86471 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C8356281CFCCE00F86471 /* ListItem.swift */; };
+		DC35751D286187F0000E0E8A /* tulabyte.db in Resources */ = {isa = PBXBuildFile; fileRef = DC35751C286187EF000E0E8A /* tulabyte.db */; };
+		DC35751E286187F0000E0E8A /* tulabyte.db in Resources */ = {isa = PBXBuildFile; fileRef = DC35751C286187EF000E0E8A /* tulabyte.db */; };
 		DC4F856F281909070006336F /* LogViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F856E281909070006336F /* LogViewHostingController.swift */; };
 		DC5279F0281B6C6B005599EF /* SubscriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5279EF281B6C6B005599EF /* SubscriptionController.swift */; };
 		DC5279F2281BA45B005599EF /* UserDefaults+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5279F1281BA45B005599EF /* UserDefaults+Helpers.swift */; };
 		DC5279F3281BA45B005599EF /* UserDefaults+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5279F1281BA45B005599EF /* UserDefaults+Helpers.swift */; };
 		DC5279F5281BA54E005599EF /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5279F4281BA54E005599EF /* NetworkMonitor.swift */; };
+		DC84DF5C2828D51C005FC8AE /* SQLController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84DF5B2828D51C005FC8AE /* SQLController.swift */; };
+		DC84DF5D2828D51C005FC8AE /* SQLController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84DF5B2828D51C005FC8AE /* SQLController.swift */; };
+		DC84DF602828D699005FC8AE /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = DC84DF5F2828D699005FC8AE /* GRDB */; };
+		DC84DF622828D6B7005FC8AE /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = DC84DF612828D6B7005FC8AE /* GRDB */; };
 		DCE6F49D28154B0400A850C0 /* LogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6F49C28154B0400A850C0 /* LogParser.swift */; };
 		DCE6F49E28154B0400A850C0 /* LogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6F49C28154B0400A850C0 /* LogParser.swift */; };
 		DCE6F4A128154F7700A850C0 /* LogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6F4A028154F7700A850C0 /* LogItem.swift */; };
@@ -687,10 +693,12 @@
 		DC15542927B890D7003C986C /* site.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = site.dat; sourceTree = "<group>"; };
 		DC1C8353281CFC8D00F86471 /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
 		DC1C8356281CFCCE00F86471 /* ListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		DC35751C286187EF000E0E8A /* tulabyte.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = tulabyte.db; sourceTree = "<group>"; };
 		DC4F856E281909070006336F /* LogViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewHostingController.swift; sourceTree = "<group>"; };
 		DC5279EF281B6C6B005599EF /* SubscriptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionController.swift; sourceTree = "<group>"; };
 		DC5279F1281BA45B005599EF /* UserDefaults+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Helpers.swift"; sourceTree = "<group>"; };
 		DC5279F4281BA54E005599EF /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		DC84DF5B2828D51C005FC8AE /* SQLController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLController.swift; sourceTree = "<group>"; };
 		DCE6F49C28154B0400A850C0 /* LogParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogParser.swift; sourceTree = "<group>"; };
 		DCE6F4A028154F7700A850C0 /* LogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItem.swift; sourceTree = "<group>"; };
 		FC6B77D8E3D9B67DE283B98C /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
@@ -713,6 +721,7 @@
 				A0507CF926F9FC0F00F91105 /* Tor.framework in Frameworks */,
 				A5445C28740CC946E8C5C0FA /* Pods_iCepa.framework in Frameworks */,
 				DC1C834C281CFB7900F86471 /* Realm in Frameworks */,
+				DC84DF602828D699005FC8AE /* GRDB in Frameworks */,
 				DC1C834E281CFB7900F86471 /* RealmSwift in Frameworks */,
 				A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */,
 			);
@@ -727,6 +736,7 @@
 				A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */,
 				A0507CFD26F9FC1700F91105 /* Tor.framework in Frameworks */,
 				31E151BC94D5763DF8D173E8 /* Pods_TorVPN.framework in Frameworks */,
+				DC84DF622828D6B7005FC8AE /* GRDB in Frameworks */,
 				DC1C8350281CFBA100F86471 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1937,6 +1947,7 @@
 		A0A735DA2475621400073C81 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				DC35751C286187EF000E0E8A /* tulabyte.db */,
 				DCE6F49F28154F4200A850C0 /* Models */,
 				DCE6F49B28154AE800A850C0 /* Managers */,
 				A0E1F1BC26834D7300111461 /* Tunnel */,
@@ -2038,6 +2049,7 @@
 				DCE6F49C28154B0400A850C0 /* LogParser.swift */,
 				DC5279EF281B6C6B005599EF /* SubscriptionController.swift */,
 				DC5279F4281BA54E005599EF /* NetworkMonitor.swift */,
+				DC84DF5B2828D51C005FC8AE /* SQLController.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -2094,6 +2106,7 @@
 			packageProductDependencies = (
 				DC1C834B281CFB7900F86471 /* Realm */,
 				DC1C834D281CFB7900F86471 /* RealmSwift */,
+				DC84DF5F2828D699005FC8AE /* GRDB */,
 			);
 			productName = iCepa;
 			productReference = A05B73B024755CE600930C40 /* iCepa.app */;
@@ -2118,6 +2131,7 @@
 			packageProductDependencies = (
 				DC1C834F281CFBA100F86471 /* Realm */,
 				DC1C8351281CFBA100F86471 /* RealmSwift */,
+				DC84DF612828D6B7005FC8AE /* GRDB */,
 			);
 			productName = TorVPN;
 			productReference = A0A735CD247561F200073C81 /* TorVPN.appex */;
@@ -2179,6 +2193,7 @@
 			mainGroup = A05B73A724755CE600930C40;
 			packageReferences = (
 				DC1C834A281CFB7900F86471 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				DC84DF5E2828D699005FC8AE /* XCRemoteSwiftPackageReference "GRDB.swift" */,
 			);
 			productRefGroup = A05B73B124755CE600930C40 /* Products */;
 			projectDirPath = "";
@@ -2210,6 +2225,7 @@
 				A05B73C024755CE700930C40 /* LaunchScreen.storyboard in Resources */,
 				A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */,
 				A05B73BB24755CE600930C40 /* Main.storyboard in Resources */,
+				DC35751D286187F0000E0E8A /* tulabyte.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2218,6 +2234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC15542B27B890D7003C986C /* site.dat in Resources */,
+				DC35751E286187F0000E0E8A /* tulabyte.db in Resources */,
 				A023D82B271986FB00A634B7 /* template-tor.conf in Resources */,
 				A04F2A4826F8E3AA00C660B0 /* template-direct.conf in Resources */,
 			);
@@ -2343,6 +2360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC84DF5C2828D51C005FC8AE /* SQLController.swift in Sources */,
 				DC5279F0281B6C6B005599EF /* SubscriptionController.swift in Sources */,
 				DC5279F2281BA45B005599EF /* UserDefaults+Helpers.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
@@ -2380,6 +2398,7 @@
 			files = (
 				A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */,
 				DC1C8358281CFCCE00F86471 /* ListItem.swift in Sources */,
+				DC84DF5D2828D51C005FC8AE /* SQLController.swift in Sources */,
 				A0A73609247587D300073C81 /* UIButton+Helpers.swift in Sources */,
 				A06470192477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
 				A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */,
@@ -2887,6 +2906,14 @@
 				minimumVersion = 10.19.0;
 			};
 		};
+		DC84DF5E2828D699005FC8AE /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2909,6 +2936,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DC1C834A281CFB7900F86471 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		DC84DF5F2828D699005FC8AE /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC84DF5E2828D699005FC8AE /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
+		DC84DF612828D6B7005FC8AE /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC84DF5E2828D699005FC8AE /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
