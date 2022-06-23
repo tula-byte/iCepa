@@ -44,8 +44,9 @@ class ViewController: UIViewController {
         nc.addObserver(self, selector: #selector(updateUi), name: .vpnStatusChanged, object: nil)
         nc.addObserver(self, selector: #selector(updateUi), name: .vpnProgress, object: nil)
 
-        //clear()
+        clear()
         updateLog(continuous: true)
+        updateUi()
     }
 
 
@@ -107,7 +108,7 @@ class ViewController: UIViewController {
                 }
             }
 
-            // the top condition 
+            // A temporary fix for the Config.torInApp check until it can be assesed whether this info is required or not
             if false {
                 TorManager.shared.getCircuits(showCircuits)
             }

@@ -122,6 +122,8 @@
 		DC84DF5D2828D51C005FC8AE /* SQLController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC84DF5B2828D51C005FC8AE /* SQLController.swift */; };
 		DC84DF602828D699005FC8AE /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = DC84DF5F2828D699005FC8AE /* GRDB */; };
 		DC84DF622828D6B7005FC8AE /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = DC84DF612828D6B7005FC8AE /* GRDB */; };
+		DCA65F8F28642C7800178993 /* MonitorLogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65F8E28642C7800178993 /* MonitorLogItem.swift */; };
+		DCA65F9028642C7800178993 /* MonitorLogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA65F8E28642C7800178993 /* MonitorLogItem.swift */; };
 		DCE6F49D28154B0400A850C0 /* LogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6F49C28154B0400A850C0 /* LogParser.swift */; };
 		DCE6F49E28154B0400A850C0 /* LogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6F49C28154B0400A850C0 /* LogParser.swift */; };
 		DCE6F4A128154F7700A850C0 /* LogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6F4A028154F7700A850C0 /* LogItem.swift */; };
@@ -699,6 +701,7 @@
 		DC5279F1281BA45B005599EF /* UserDefaults+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Helpers.swift"; sourceTree = "<group>"; };
 		DC5279F4281BA54E005599EF /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		DC84DF5B2828D51C005FC8AE /* SQLController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLController.swift; sourceTree = "<group>"; };
+		DCA65F8E28642C7800178993 /* MonitorLogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorLogItem.swift; sourceTree = "<group>"; };
 		DCE6F49C28154B0400A850C0 /* LogParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogParser.swift; sourceTree = "<group>"; };
 		DCE6F4A028154F7700A850C0 /* LogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItem.swift; sourceTree = "<group>"; };
 		FC6B77D8E3D9B67DE283B98C /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2059,6 +2062,7 @@
 			children = (
 				DC1C8356281CFCCE00F86471 /* ListItem.swift */,
 				DCE6F4A028154F7700A850C0 /* LogItem.swift */,
+				DCA65F8E28642C7800178993 /* MonitorLogItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2374,6 +2378,7 @@
 				DC5279F5281BA54E005599EF /* NetworkMonitor.swift in Sources */,
 				A0A73603247584EE00073C81 /* VpnManager.swift in Sources */,
 				A0A735EE24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
+				DCA65F8F28642C7800178993 /* MonitorLogItem.swift in Sources */,
 				A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
 				A01F34DF2652D082008F9912 /* Logger.swift in Sources */,
 				A0A735E1247566CD00073C81 /* Config.m in Sources */,
@@ -2405,6 +2410,7 @@
 				A01F34DD2652C7D6008F9912 /* TorManager.swift in Sources */,
 				DC1C8355281CFC8D00F86471 /* RealmController.swift in Sources */,
 				DCE6F4A228154F7700A850C0 /* LogItem.swift in Sources */,
+				DCA65F9028642C7800178993 /* MonitorLogItem.swift in Sources */,
 				A0A735E2247566CD00073C81 /* Config.m in Sources */,
 				A053995026822C4F00A19969 /* URL+Helpers.swift in Sources */,
 				DCE6F49E28154B0400A850C0 /* LogParser.swift in Sources */,
